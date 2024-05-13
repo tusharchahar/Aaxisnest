@@ -59,11 +59,10 @@ describe('UserServiceController', () => {
     it('should update user and return status 200 if user exists', async () => {
       const username = 'testuser';
       const updateUserDto: UpdateUserDto = {
-        /* Update user data here */
+        username: username,
       };
       const msg = { affected: 1 };
       jest.spyOn(mockUserRepository, 'update').mockReturnValue(msg);
-      //jest.spyOn(service, 'updateUser').mockResolvedValue({ status: 200, msg });
 
       const result = await controller.update(username, updateUserDto);
 
@@ -73,7 +72,7 @@ describe('UserServiceController', () => {
     it('should return status 404 if user does not exist', async () => {
       const username = 'nonexistentuser';
       const updateUserDto: UpdateUserDto = {
-        /* Update user data here */
+        username: username,
       };
       jest.spyOn(mockUserRepository, 'update').mockReturnValue({ affected: 0 });
 
