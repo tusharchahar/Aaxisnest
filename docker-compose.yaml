@@ -1,0 +1,26 @@
+version: "3"
+services:
+  auth-service-prod:
+    container_name: auth-service
+    env_file:
+      - ./.env.production
+    build:
+      context: .
+      target: production
+      args:
+        - APP=auth-service
+    restart: always
+    ports:
+      - 3000:3000
+  user-service-prod:
+    container_name: user-service
+    env_file:
+      - ./.env.production
+    build:
+      context: .
+      target: production
+      args:
+        - APP=user-service
+    restart: always
+    ports:
+      - 3001:3000
