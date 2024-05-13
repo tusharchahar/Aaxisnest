@@ -35,14 +35,11 @@ $ pnpm install
 ## Running the app
 
 ```bash
-# development
-$ pnpm run start
+# auth-service
+$ pnpm run start:auth
 
-# watch mode
-$ pnpm run start:dev
-
-# production mode
-$ pnpm run start:prod
+# user-service
+$ pnpm run start:user
 ```
 
 ## Test
@@ -50,12 +47,6 @@ $ pnpm run start:prod
 ```bash
 # unit tests
 $ pnpm run test
-
-# e2e tests
-$ pnpm run test:e2e
-
-# test coverage
-$ pnpm run test:cov
 ```
 
 ## Support
